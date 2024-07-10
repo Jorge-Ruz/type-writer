@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  background-color: #333;
+  font-family: "montserrat";
+  display: flex;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  filter: drop-shadow(0 0 15px #fff) drop-shadow(0 0 3px #fff);
+}
+
+.text {
+  color: #fff;
+  letter-spacing: 10px;
+  font-size: 40px;
+  animation: grow 1s both steps(8);
+  overflow: hidden;
+  position: relative;
+}
+
+.text::before {
+  content: '';
+  width: 2px;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  right: 0;
+  border-radius: 4px;
+  animation: titilar .3s infinite alternate;
+}
+
+.text::selection {
+  background-color: transparent;
+}
+
+@keyframes grow {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes titilar {
+  from {
+    opacity: 0;
+  }
+  to {
+    overflow: 1;
+  }
+}
